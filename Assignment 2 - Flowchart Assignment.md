@@ -17,6 +17,9 @@ flowchart TB;
     step8[Apply more pressure on hand.]
     step9[Move your hand to location identified.]
     step10[Open the right hand to release the grip of the jar's lid.]
+    step11[Move the right hand above the slices of bread.]
+    step12[Move the right hand in the direction of the bread.]
+    step13[Close the right hand to grab the bread.]
 
     input1[/Locate the following ingredients\n and note where they are positioned: \n\n Sliced Loaves of Bread,\n Knife,\n Peanut Butter Jar filled with Peanut Butter,\n Jelly jar filled with Jelly./]
     input2[/Locate a spot on the table that has no obstructions./]
@@ -24,8 +27,7 @@ flowchart TB;
     if1{Does lid come off?}
     if2{Is peanut butter jar open?}
     if3{Is jelly jar open?}
-
-    loop1{{DO}}
+    if4{Is hand touching bread?}
 
     focus1[/Focus on Peanut Butter jar./]
     focus2[/Focus on Jelly jar./]
@@ -36,28 +38,32 @@ flowchart TB;
 
     assume1 --> step1
     assume2 --> input1
-
-    loop1 --> if2
+    assume3 --> step11
 
     if1 --Yes--> input2
-    if1 --No--> step8z
-    if2 --No--> if3
-    if2 --Yes--> focus1
+    if1 --No--> step8
+    if2 --Yes--> if3
+    if2 --No--> focus1
     if3 --Yes--> assume3
     if3 --No --> focus2
+    if4 --Yes --> step13
+    if4 --No --> step12
     
     focus1 --> step4
     focus2 --> step4
     
     step1 --> assume2
     step2 --> step3
-    step3 --> loop1
+    step3 --> if2
     step4 --> step6
     step6 --> step7
     step7 --> if1
     step8 --> step7
     step9 --> step10
-    step10 --> loop1
+    step10 --> if2
+    step11 --> if4
+    step12 --> if4
+    
     
     input1 --> step2
     input2 --> step9
