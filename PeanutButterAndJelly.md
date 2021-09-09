@@ -27,4 +27,16 @@
 25. Lower the right hand until the blade is inside the jar.
 26. Rotate the hand 20° in any direction.
 27. Raise the right hand to the position the hand was in step 25.
-28. 
+28. Locate a slice of bread.
+29. Move right hand above bread.
+30. Rotate knife so blade is parallel to floor.
+31. Grab located bread slice with left hand.
+32. Lower right hand so that knife blade is touching top-right corner of bread.
+33. Move knife blade to bottom-left corner of bread while touching bread.
+34. Open left hand to release grip.
+35. Repeat steps 22-33 but with jelly and other bread slice.
+36. Grab one bread slice with right hand.
+37. Rotate bread slice so topping faces the floor.
+38. Move right hand above other bread slice.
+39. Lower right hand.
+40. Open right hand.
