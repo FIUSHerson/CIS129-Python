@@ -1,0 +1,21 @@
+Constant int SLICES_PER_PERSON = 3
+
+// Get number of pizzas
+Display "How many whole pizzas do you have? : "
+Input whole_pizzas
+
+// Get number of slices to cut the pizza into
+Display "How many slices will the pizza(s) be cut into? : "
+Input pizza_slice_number
+
+// Get number of people
+Display "How many people are attending, including you? : "
+Input number_of_people
+
+// Calculations
+Declare int slices_needed = SLICES_PER_PERSON * number_of_people
+Declare int slices_have = whole_pizzas * pizza_slice_number
+Declare int slices_remaining = slices_have - slices_needed
+
+// Display results
+Display "Remaining slices: ", slices_remaining

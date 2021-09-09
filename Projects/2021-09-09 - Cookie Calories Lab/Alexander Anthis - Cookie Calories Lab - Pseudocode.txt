@@ -1,0 +1,18 @@
+// Declare some constants
+Constant int COOKIES_PER_SERVING = 4
+Constant int CALORIES_PER_SERVING = 300
+Constant int CALORIES_PER_COOKIE = CALORIES_PER_SERVING / COOKIES_PER_SERVING
+
+// Initialize variable
+Declare int cookies_consumed
+Declare int calories_consumed
+
+// Ask for input
+Display "How many cookies did you eat? : "
+Input cookies_consumed
+
+// Process math
+calories_consumed = cookies_consumed * CALORIES_PER_COOKIE
+
+// Display output
+Display "You have consumed " + calories_consumed + " calories."
