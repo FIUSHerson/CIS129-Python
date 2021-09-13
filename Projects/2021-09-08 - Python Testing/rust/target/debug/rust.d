@@ -1,0 +1,1 @@
+/home/aanthis/Documents/School/Pima/CIS129-Python/Projects/2021-09-08\ -\ Python\ Testing/rust/target/debug/rust: /home/aanthis/Documents/School/Pima/CIS129-Python/Projects/2021-09-08\ -\ Python\ Testing/rust/src/main.rs
