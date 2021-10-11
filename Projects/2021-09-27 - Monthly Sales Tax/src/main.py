@@ -25,10 +25,12 @@ def CalculateTaxAmounts(profit_amount):
     purchase_county_tax_amount = profit_amount * COUNTY_TAX_RATE
     purchase_total = profit_amount + purchase_state_tax_amount + purchase_county_tax_amount
 
+    # Return all variables bundled up in a tuple
     return (profit_amount, purchase_state_tax_amount, purchase_county_tax_amount, purchase_total)
 
 
 def PrintResults(purchase_data):
+    # Deconstruct the tuple into the needed variables
     profit_amount, purchase_state_tax_amount, purchase_county_tax_amount, purchase_total = purchase_data
 
     # Fancy print everything out
