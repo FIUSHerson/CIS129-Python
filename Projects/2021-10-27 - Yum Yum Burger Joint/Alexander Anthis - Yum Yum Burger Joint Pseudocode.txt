@@ -1,0 +1,105 @@
+Module getUserMenuChoice()
+    # Ask for and returns user menu choice and quantity
+
+    # Init variables
+    Declare Real menuChoice
+    Declare Real menuChoiceQuantity
+    Declare Tuple chosenUserMenuOption      # Format: (choice, quantity)
+    
+    # Show options and get input
+    Display "Enter 1 for Yum Yum Burger"
+    Display "Enter 2 for Grease Yum Fries"
+    Display "Enter 3 for Soda Yum"
+    Display "Enter your choice: "
+    Input menuChoice
+    
+    # Ask for quantity
+    Display "Enter the quantity: "
+    Input menuChoiceQuantity
+    
+    # Return results
+    chosenUserMenuOption = (menuChoice, menuChoiceQuantity)
+    Return chosenUserMenuOption
+End Module
+
+
+Module searchItem(option)
+    # Searches for menu item, then returns better info
+    
+    # Init variables
+    Declare Tuple menuItem1("Yum Yum Burger", 0.99)     # Format: (Name, Price)
+    Declare Tuple menuItem2("Grease Yum Fries", 0.79)
+    Declare Tuple menuItem3("Soda Yum", 1.09)
+    
+    # Run option through filter
+    If option == 1
+        Return menuItem1
+    Else If option == 2
+        Return menuItem2
+    Else If option == 3
+        Return menuItem3
+End Module
+
+
+Module checkoutOrder(userCart)
+    # Calculate and display final price
+    
+    # Init variable
+    Declare Float totalPrice = 0.00
+
+    # Add each item to cart
+    For item in userCart
+        totalPrice += item[1]
+    End For
+    
+    # Show results
+    Display "The total price is: $" + totalPrice
+End Module
+
+
+Module main()
+    # Init variables
+    Declare String userInput
+    Declare Boolean rerunProgram = True
+    
+    While rerunProgram == True
+        # Init variables
+        Declare Array[Tuple] userCart[]
+        Declare Tuple chosenUserMenuOption      # Tuple arranged as (item, quantity)
+        Declare Real loopCounter = 1
+        Declare Boolean continueOrder = True
+        
+        # Begin main portion of program
+        While continueOrder == True           # Allow multiple items
+            chosenUserMenuOption = getUserMenuChoice()      # Get user's menu choice
+            
+            While loopCounter <= chosenUserMenuOption[1]    # Run loop as many times as the quantity of user's menu choice
+                userCart.append(searchItem(chosenUserMenuOption[0]))        # Search for correlating item, then add to cart
+                loopCounter += 1
+            End While
+            
+            # Ask if user wants more items
+            Display "Would you like to end your order? [Y/n]: "             
+            Input userInput
+            
+            If userInput == "n" || userInput == "N"
+                continueOrder = True
+            Else
+                continueOrder = False
+            End If
+        End While
+        
+        # Checkout Order
+        checkoutOrder(userCart)
+        
+        # Ask if user wants to run program again, defaults to no
+        Display "Would you like to run the program again? [y/N]"
+        Input userInput
+        
+        If userInput == "y" || userInput == "Y"
+            rerunProgram = False
+        End If
+    End While
+End Module
+
+Call main()
